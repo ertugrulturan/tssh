@@ -14,5 +14,5 @@ tssh 1.1.1.1
 ```
 special port and user command:
 ```
-tssh user 168.119.242.243 2222
+tssh 1.1.1.1 user 2222
 ```
