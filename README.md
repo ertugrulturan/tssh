@@ -1,6 +1,6 @@
 # Basic Timer Sercure Shell
 Timer SSH - Simple ssh connection script for automatic ping after reboot or during installation
-# One Command Install
+# One Command Install (run root)
 ```
 apt-get install wget curl -y && curl https://raw.githubusercontent.com/ertugrulturan/tssh/main/install.sh | bash
 ```
