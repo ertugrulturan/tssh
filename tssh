@@ -1,0 +1,32 @@
+#!/bin/bash
+
+default_user="root"
+default_port="22"
+
+if [ -z "$2" ]; then
+    host_ip="$1"
+    user="$default_user"
+else
+    host_ip="$2"
+    user="$1"
+fi
+
+if [ -z "$3" ]; then
+    port="$default_port"
+else
+    port="$3"
+fi
+
+ssh_command="ssh -p $port $user@$host_ip"
+
+while true; do
+    if ping -c 1 $host_ip &> /dev/null; then
+        echo "Ping is successful, SSH connection is being made..."
+        sleep 2
+        $ssh_command
+        break
+    else
+        echo "Ping waiting..."
+        sleep 1
+    fi
+done
